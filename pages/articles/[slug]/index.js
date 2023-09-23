@@ -92,7 +92,7 @@ export default function Articles({ data }) {
 
 export async function getServerSideProps({ params: { slug } }) {
   try {
-    const data = await axios.get('http://localhost:3000/api/articles/' + slug).then(res => res.data);
+    const data = await axios.get('https://bencan.net/api/articles/' + slug).then(res => res.data).catch(() => null);
     if (!data) return { notFound: true };
 
     return {

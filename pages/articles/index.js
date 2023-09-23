@@ -69,7 +69,7 @@ export default function Articles({ articles }) {
 
 export async function getServerSideProps() {
   try {
-    const articles = await axios.get('http://localhost:3000/api/articles').then(res => res.data);
+    const articles = await axios.get('https://bencan.net/api/articles').then(res => res.data).catch(() => null);
 
     return {
       props: {

@@ -29,8 +29,8 @@ export default function Home({ discord_status, articles }) {
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get('https://api.lanyard.rest/v1/users/957840712404193290').then(res => res.data);
-    const articles = await axios.get('/api/articles').then(res => res.data);
+    const response = await axios.get('https://api.lanyard.rest/v1/users/957840712404193290').then(res => res.data).catch(() => null);
+    const articles = await axios.get('https://bencan.net/api/articles').then(res => res.data).catch(() => null);
 
     return {
       props: {
