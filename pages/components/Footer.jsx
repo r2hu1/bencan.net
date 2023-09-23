@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className='flex mt-2 justify-between gap-4 flex-wrap'>
-          <motion.div className='flex gap-x-4 items-center w-max h-max' variants={container} initial='hidden' whileInView='show'>
+          <motion.div className='flex gap-4 items-center w-max h-max flex-wrap' variants={container} initial='hidden' whileInView='show'>
             {social.map((social, index) => (
               <motion.div className='flex items-center gap-x-2' key={index} variants={item}>
                 <InlineLink to={social.url}>

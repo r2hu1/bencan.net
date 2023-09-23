@@ -13,7 +13,7 @@ export function WebsiteCard(props) {
     <motion.div className='flex justify-between w-full h-full' {...props}>
       <div className='flex flex-col max-w-[383px] gap-y-2 w-full'>
         <span className='text-xs text-tertiaryTextColor'>{props.data.year}</span>
-        <h2 className='text-sm sm:text-lg font-semibold'>{props.data.name}</h2>
+        <h2 className='text-sm sm:text-lg font-semibold truncate max-w-[100px] mobile:max-w-full'>{props.data.name}</h2>
         <p className='text-xs sm:text-base text-secondaryTextColor'>
           {props.data.description}
         </p>
