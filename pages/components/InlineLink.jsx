@@ -3,7 +3,7 @@ import { LuArrowRight } from "react-icons/lu";
 import { twMerge } from "tailwind-merge";
 
 export default function InlineLink({ to, children, className, underlineDisabled, arrowRotate }) {
-  if (!to.startsWith('/')) to = `${to}?utm_source=bencan.net&utm_medium=inline-link&utm_campaign=inline-link`;
+  if (!(to ?? '').startsWith('/')) to = `${to ?? ''}?utm_source=bencan.net&utm_medium=inline-link&utm_campaign=inline-link`;
   
   return (
     <Link className={twMerge(
