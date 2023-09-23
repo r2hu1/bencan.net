@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect } from "react";
-import { LuBox, LuBookMarked, LuPalmtree, LuMenu, LuX } from 'react-icons/lu';
+import { LuBox, LuBookMarked, LuPalmtree, LuMenu, LuX, LuFileBadge } from 'react-icons/lu';
 import { useLockBodyScroll, useMedia, useToggle, useWindowScroll } from "react-use";
 
 export default function Header() {
@@ -20,6 +20,11 @@ export default function Header() {
       text: 'Makaleler',
       link: '/articles',
       icon: LuBookMarked
+    },
+    {
+      text: 'CV',
+      link: '/cv.pdf',
+      icon: LuFileBadge
     }
   ];
 
@@ -36,7 +41,7 @@ export default function Header() {
     return (
       <div className="mt-16 flex mb-1.5 gap-x-4  flex-wrap">
         {links.map((link, index) => (
-          <Link href={link.link} key={index} className="my-3 text-base flex items-center gap-x-1 hover:bg-tertiaryBackgroundColor px-3 mx-3 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-tertiaryTextColor hover:text-primaryTextColor select-none">
+          <Link href={link.link} key={index} className="my-3 text-base flex items-center gap-x-1 hover:bg-tertiaryBackgroundColor px-3 mx-2 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-tertiaryTextColor hover:text-primaryTextColor select-none">
             {link.icon && <link.icon />}
             {link.text}
           </Link>
