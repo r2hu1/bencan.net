@@ -3,8 +3,11 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { LuBox, LuBookMarked, LuPalmtree, LuMenu, LuX, LuFileBadge } from 'react-icons/lu';
 import { useLockBodyScroll, useMedia, useToggle, useWindowScroll } from "react-use";
+import { usePathname } from 'next/navigation';
+import { twMerge } from "tailwind-merge";
 
 export default function Header() {
+  const pathname = usePathname();
   const links = [
     {
       text: 'bencan.net',
@@ -41,7 +44,10 @@ export default function Header() {
     return (
       <div className="mt-16 flex mb-1.5 gap-x-4  flex-wrap">
         {links.map((link, index) => (
-          <Link href={link.link} key={index} className="my-3 text-base flex items-center gap-x-1 hover:bg-tertiaryBackgroundColor px-3 mx-2 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-tertiaryTextColor hover:text-primaryTextColor select-none">
+          <Link href={link.link} key={index} className={twMerge(
+            'my-3 text-base flex items-center gap-x-1 hover:bg-tertiaryBackgroundColor px-3 mx-2 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-tertiaryTextColor hover:text-primaryTextColor select-none',
+            pathname === link.link ? 'bg-tertiaryBackgroundColor cursor-default text-primaryTextColor' : 'bg-primaryBackgroundColor cursor-pointer'
+          )} onClick={e => pathname === link.link && e.preventDefault()}>
             {link.icon && <link.icon />}
             {link.text}
           </Link>
