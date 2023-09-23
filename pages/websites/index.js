@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import Head from 'next/head';
 import OpacityMotion from '@/pages/components/OpacityMotion';
+import { LuPalmtree } from 'react-icons/lu';
 
 export function WebsiteCard(props) {
   return (
@@ -52,8 +53,8 @@ export default function Websites({ createdWebsites }) {
           <Header />
           <OpacityMotion>
             <div className="mx-6 mt-28 flex flex-col">
-              <h1 className='text-lg'>
-                Yaptığım Websiteler
+              <h1 className='text-lg flex items-center gap-x-1'>
+                <LuPalmtree /> Yaptığım Websiteler
               </h1>
 
               <p className='text-secondaryTextColor text-sm mt-4'>

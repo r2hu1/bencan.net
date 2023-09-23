@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import fs from 'fs';
 import OpacityMotion from '@/pages/components/OpacityMotion';
+import { LuBookMarked } from 'react-icons/lu';
 
 export function ArticleCard(props) {
   return (
@@ -43,8 +44,8 @@ export default function Articles({ articles }) {
 
           <OpacityMotion>
             <div className="mx-6 mt-28 flex flex-col">
-              <h1 className='text-lg'>
-                Makaleler
+              <h1 className='text-lg flex items-center gap-x-1'>
+                <LuBookMarked /> Makaleler
               </h1>
 
               <div className='my-8 flex flex-col gap-y-8'>
