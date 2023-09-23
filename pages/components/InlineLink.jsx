@@ -7,7 +7,7 @@ export default function InlineLink({ to, children, className, underlineDisabled,
     <Link className={twMerge(
       '!text-sm flex items-center hover:opacity-60 duration-300 ease-in-out transition-opacity w-max',
       className
-    )} href={to}>
+    )} href={to ?? ''}>
       <span className={twMerge(
         underlineDisabled !== true && 'custom-underline'
       )}>{children}</span>

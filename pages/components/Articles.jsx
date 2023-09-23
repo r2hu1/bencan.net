@@ -30,7 +30,7 @@ export default function Articles({ articles }) {
         </h1>
 
         <motion.div className='my-8 flex flex-col gap-y-8' variants={container} initial='hidden' whileInView='show'>
-          {articles.slice(0, 3).map((website, index) => (
+          {articles?.slice(0, 3)?.map((website, index) => (
             <ArticleCard className='flex justify-between' key={index} variants={item} data={website} />
           ))}
         </motion.div>
