@@ -24,7 +24,7 @@ export default function TechStack() {
       <Seperator />
       <div className="mx-6 flex flex-col">
         <h1 className='text-lg'>
-          Kurduğum Teknolojiler
+          Kullandığı Teknolojiler
         </h1>
         
         <motion.div className='flex flex-wrap gap-5 mt-5 select-none items-center' variants={container} initial='hidden' whileInView='show'>
