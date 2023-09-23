@@ -42,7 +42,7 @@ export default function TechStack() {
                   <div className='w-full rounded-lg h-[4px]' style={{ backgroundColor: `${language.barColor}20` }} />
                   <div className='w-full absolute top-0 left-0'>
                     <motion.div className='relative w-full flex items-center transition-all duration-300 ease-in-out' initial={{ maxWidth: 0 }} animate={{ maxWidth: `${language.percentage}%` }} transition={{ duration: 1, ease: 'easeInOut', delay: `${index * 0.1}` }}>
-                      <motion.div className='h-[4px] rounded-lg w-full bg-tertiaryTextColor' style={{ backgroundColor: language.barColor }} initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 1, ease: 'easeInOut' }} />
+                      <motion.div className='h-[4px] rounded-lg w-full bg-tertiaryTextColor' style={{ backgroundColor: language.barColor }} initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 1, ease: 'easeInOut', delay: `${index * 0.1}` }} />
                     </motion.div>
                   </div>
                 </div>
