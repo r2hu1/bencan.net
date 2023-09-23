@@ -9,11 +9,11 @@ import { LuGithub } from 'react-icons/lu';
 import Link from 'next/link';
 import fs from 'fs';
 
-export default function Home({ discord_status, articles }) {
+export default function Home({ discord_data, articles }) {
   return <div className="w-full h-full flex justify-center">
     <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
       <Header />
-      <AboutMe discord_status={discord_status} />
+      <AboutMe discord_data={discord_data} />
       <CreatedWebsites />
       <Articles articles={articles} />
       <TechStack />
@@ -55,7 +55,7 @@ export async function getServerSideProps() {
 
     return {
       props: {
-        discord_status: response?.data?.discord_status || 'offline',
+        discord_data: response?.data || 'offline',
         articles: articlesSortedByDate || []
       }
     };

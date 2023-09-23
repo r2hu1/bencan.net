@@ -22,6 +22,7 @@
   transition-duration: 200ms !important;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) !important;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  width: max-content !important;
 }
 
 .tippy-box[data-state="hidden"] {
