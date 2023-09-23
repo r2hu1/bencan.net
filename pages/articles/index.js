@@ -69,11 +69,30 @@ export default function Articles({ articles }) {
 
 export async function getServerSideProps() {
   try {
-    const articles = await axios.get('/api/articles').then(res => res.data).catch(() => null);
+    const files = fs.readdirSync(`${process.cwd()}/public/articles`);
+    const articles = files.map(filename => {
+      const markdownContent = fs.readFileSync(`${process.cwd()}/public/articles/${filename}`).toString();
+      const withoutMetadata = markdownContent.split('---').slice(2).join('---');
+      const metadata = markdownContent.split('---')[1].split('\n').reduce((acc, curr) => {
+        const [key, value] = curr.split(': ');
+        if (!key || key == '\r') return acc;
+
+        return { ...acc, [key]: value };
+      }, {});
+
+      return {
+        filename,
+        metadata,
+        markdownContent,
+        markdownWithoutMetadata: withoutMetadata
+      };
+    });
+
+    const articlesSortedByDate = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     return {
       props: {
-        articles: articles || []
+        articles: articlesSortedByDate || []
       }
     };
   } catch (error) {
