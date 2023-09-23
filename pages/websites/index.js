@@ -74,7 +74,7 @@ export default function Websites({ createdWebsites }) {
                 if (limit >= createdWebsites.length) return;
                 setLimit(limit + 3);
               }}>
-                Load More ({limit}/{createdWebsites.length})
+                Daha fazla yükle ({limit}/{createdWebsites.length})
               </button>
             </div>
           </OpacityMotion>
