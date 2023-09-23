@@ -93,9 +93,9 @@ export default function Articles({ data }) {
 
 export async function getServerSideProps({ params: { slug } }) {
   try {
-    const files = fs.readdirSync(path.join('.output', 'static', 'public', 'articles'));
+    const files = fs.readdirSync(`${process.cwd()}/public/articles`);
     const articles = files.map(filename => {
-      const markdownContent = fs.readFileSync(path.join('.output', 'static', 'public', 'articles', filename)).toString();
+      const markdownContent = fs.readFileSync(`${process.cwd()}/public/articles/${filename}`).toString();
       const withoutMetadata = markdownContent.split('---').slice(2).join('---');
       const metadata = markdownContent.split('---')[1].split('\n').reduce((acc, curr) => {
         const [key, value] = curr.split(': ');
