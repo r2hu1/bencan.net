@@ -69,7 +69,7 @@ export default function Articles({ articles }) {
 
 export async function getServerSideProps() {
   try {
-    const articles = await axios.get('https://bencan.net/api/articles').then(res => res.data).catch(() => null);
+    const articles = await axios.get('/api/articles').then(res => res.data).catch(() => null);
 
     return {
       props: {
