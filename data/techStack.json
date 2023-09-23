@@ -1,0 +1,61 @@
+[
+  {
+    "name": "JavaScript",
+    "percentage": 80,
+    "barColor": "#f0db4f",
+    "logoPath": "/images/javascript.svg"
+  },
+  {
+    "name": "HTML",
+    "percentage": 65,
+    "barColor": "#f06529",
+    "logoPath": "/images/html.svg"
+  },
+  {
+    "name": "CSS",
+    "percentage": 70,
+    "barColor": "#2965f1",
+    "logoPath": "/images/css.svg"
+  },
+  {
+    "name": "React",
+    "percentage": 70,
+    "barColor": "#61dbfb",
+    "logoPath": "/images/react.svg"
+  },
+  {
+    "name": "Next.js",
+    "percentage": 30,
+    "barColor": "#000000",
+    "logoPath": "/images/nextjs.svg"
+  },
+  {
+    "name": "Tailwind CSS",
+    "percentage": 75,
+    "barColor": "#07b6d4",
+    "logoPath": "/images/tailwindcss.svg"
+  },
+  {
+    "name": "MongoDB",
+    "percentage": 20,
+    "barColor": "#13aa52",
+    "logoPath": "/images/mongodb.svg"
+  },
+  {
+    "name": "SQLite",
+    "percentage": 20,
+    "barColor": "#003b57"
+  },
+  {
+    "name": "Node.js",
+    "percentage": 80,
+    "barColor": "#68a063",
+    "logoPath": "/images/nodejs.svg"
+  },
+  {
+    "name": "Python",
+    "percentage": 30,
+    "barColor": "#3776ab",
+    "logoPath": "/images/python.svg"
+  }
+]
