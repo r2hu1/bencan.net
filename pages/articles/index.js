@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import fs from 'fs';
+import OpacityMotion from '@/pages/components/OpacityMotion';
 
 export function ArticleCard(props) {
   return (
@@ -39,27 +40,30 @@ export default function Articles({ articles }) {
 
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
-          <div className="mx-6 mt-28 flex flex-col">
-            <h1 className='text-lg'>
-              Makaleler
-            </h1>
 
-            <div className='my-8 flex flex-col gap-y-8'>
-              {articles.slice(0, limit).map((article, index) => (
-                <ArticleCard className='flex justify-between' key={index} data={article} />
-              ))}
+          <OpacityMotion>
+            <div className="mx-6 mt-28 flex flex-col">
+              <h1 className='text-lg'>
+                Makaleler
+              </h1>
+
+              <div className='my-8 flex flex-col gap-y-8'>
+                {articles.slice(0, limit).map((article, index) => (
+                  <ArticleCard className='flex justify-between' key={index} data={article} />
+                ))}
+              </div>
+
+              <button className={twMerge(
+                'bg-secondaryBackgroundColor hover:bg-tertiaryBackgroundColor duration-300 ease-in-out transition-all text-sm text-primaryTextColor rounded w-full py-2 font-medium',
+                limit >= articles.length ? 'opacity-0 translate-y-5 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'
+              )} onClick={() => {
+                if (limit >= articles.length) return;
+                setLimit(limit + 3);
+              }}>
+                Load More ({limit}/{articles.length})
+              </button>
             </div>
-
-            <button className={twMerge(
-              'bg-secondaryBackgroundColor hover:bg-tertiaryBackgroundColor duration-300 ease-in-out transition-all text-sm text-primaryTextColor rounded w-full py-2 font-medium',
-              limit >= articles.length ? 'opacity-0 translate-y-5 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'
-            )} onClick={() => {
-              if (limit >= articles.length) return;
-              setLimit(limit + 3);
-            }}>
-              Load More ({limit}/{articles.length})
-            </button>
-          </div>
+          </OpacityMotion>
         </div>
 
       </div>

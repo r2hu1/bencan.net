@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <NextNProgress color='#4f4f4f' height={3} />
-      <div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className='min-w-[320px] bg-primaryBackgroundColor text-primaryTextColor min-h-[100dvh]'>
+      <div className='min-w-[320px] bg-primaryBackgroundColor text-primaryTextColor min-h-[100dvh]'>
         <Component {...pageProps} />
       </div>
     </>

@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Head from 'next/head';
 import fs from 'fs';
+import OpacityMotion from '@/pages/components/OpacityMotion';
 
 const components = {
   h1: ({ node, ...props }) => <h1 className='text-xl font-semibold' {...props} />,
@@ -45,9 +46,24 @@ export default function Articles({ data }) {
 
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
-          <div className="mx-6 mt-28 flex flex-col">
-            <div className='relative max-w-[1000px] max-h-[400px]'>
-              <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80 rounded-lg hidden sm:flex items-end p-6 justify-between gap-2 text-sm font-medium text-neutral-400'>
+          <OpacityMotion>
+            <div className="mx-6 mt-28 flex flex-col">
+              <div className='relative max-w-[1000px] max-h-[400px]'>
+                <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80 rounded-lg hidden sm:flex items-end p-6 justify-between gap-2 text-sm font-medium text-neutral-400'>
+                  <div className='flex items-center gap-x-1'>
+                    <LuCalendarDays />
+                    <p>{new Date(data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  </div>
+
+                  <div className='flex items-center gap-x-1'>
+                    <LuTimer />
+                    <p>{readTime} dakika okuma süresi</p>
+                  </div>
+                </div>
+                <Image src={data.metadata.image} alt={data.metadata.title} width={1000} height={300} className='rounded-lg object-cover max-h-[300px] h-full' />
+              </div>
+
+              <div className='flex sm:hidden gap-2 flex-wrap mt-4 text-sm font-medium text-neutral-400'>
                 <div className='flex items-center gap-x-1'>
                   <LuCalendarDays />
                   <p>{new Date(data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
@@ -58,31 +74,18 @@ export default function Articles({ data }) {
                   <p>{readTime} dakika okuma süresi</p>
                 </div>
               </div>
-              <Image src={data.metadata.image} alt={data.metadata.title} width={1000} height={300} className='rounded-lg object-cover max-h-[300px] h-full' />
-            </div>
 
-            <div className='flex sm:hidden gap-2 flex-wrap mt-4 text-sm font-medium text-neutral-400'>
-              <div className='flex items-center gap-x-1'>
-                <LuCalendarDays />
-                <p>{new Date(data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              </div>
+              <h1 className='text-4xl font-extrabold mt-8 sm:mt-4'>
+                {data.metadata.title}
+              </h1>
 
-              <div className='flex items-center gap-x-1'>
-                <LuTimer />
-                <p>{readTime} dakika okuma süresi</p>
+              <div className='flex items-center gap-x-2 mt-8'>
+                <ReactMarkdown className='text-lg text-secondaryTextColor w-full h-full flex flex-col gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
+                  {data.markdownWithoutMetadata}
+                </ReactMarkdown>
               </div>
             </div>
-
-            <h1 className='text-4xl font-extrabold mt-8 sm:mt-4'>
-              {data.metadata.title}
-            </h1>
-
-            <div className='flex items-center gap-x-2 mt-8'>
-              <ReactMarkdown className='text-lg text-secondaryTextColor w-full h-full flex flex-col gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
-                {data.markdownWithoutMetadata}
-              </ReactMarkdown>
-            </div>
-          </div>
+          </OpacityMotion>
         </div>
 
       </div>

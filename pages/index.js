@@ -8,22 +8,25 @@ import axios from 'axios';
 import { LuGithub } from 'react-icons/lu';
 import Link from 'next/link';
 import fs from 'fs';
+import OpacityMotion from '@/pages/components/OpacityMotion';
 
 export default function Home({ discord_data, articles }) {
   return <div className="w-full h-full flex justify-center">
     <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
       <Header />
-      <AboutMe discord_data={discord_data} />
-      <CreatedWebsites />
-      <Articles articles={articles} />
-      <TechStack />
-      <Footer />
+      <OpacityMotion>
+        <AboutMe discord_data={discord_data} />
+        <CreatedWebsites />
+        <Articles articles={articles} />
+        <TechStack />
+        <Footer />
 
-      <Link className='w-full flex items-center justify-center text-center mt-4 rounded py-2 max-w-[94.5%] mx-auto hover:bg-tertiaryBackgroundColor group cursor-pointer transition-all duration-300 ease-in-out' href='https://github.com/chimpdev/bencan.net' target='_blank'>
-        <h1 className='flex items-center gap-x-1 text-tertiaryTextColor text-xs group-hover:text-neutral-100 transition-all duration-300 ease-in-out'>
-          Bu site <LuGithub /> Github'da açık kaynak kodlu!
-        </h1>
-      </Link>
+        <Link className='w-full flex items-center justify-center text-center mt-4 rounded py-2 max-w-[94.5%] mx-auto hover:bg-tertiaryBackgroundColor group cursor-pointer transition-all duration-300 ease-in-out' href='https://github.com/chimpdev/bencan.net' target='_blank'>
+          <h1 className='flex items-center gap-x-1 text-tertiaryTextColor text-xs group-hover:text-neutral-100 transition-all duration-300 ease-in-out'>
+            Bu site <LuGithub /> Github'da açık kaynak kodlu!
+          </h1>
+        </Link>
+      </OpacityMotion>
     </div>
   </div>
 };

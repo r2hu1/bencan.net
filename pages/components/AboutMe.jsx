@@ -21,7 +21,7 @@ export default function AboutMe({ discord_data, activityData }) {
                     'w-2 h-2 rounded-full block',
                     `bg-discordStatus-${discord_data?.discord_status}` // bg-discordStatus-online bg-discordStatus-offline bg-discordStatus-dnd bg-discordStatus-idle
                   )} initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: .2 }} />
-                  {discord_data.discord_status.replace('online', 'Çevrimiçi').replace('offline', 'Çevrimdışı').replace('dnd', 'Rahatsız Etmeyin').replace('idle', 'Çevrimiçi')}
+                  {discord_data?.discord_status.replace('online', 'Çevrimiçi').replace('offline', 'Çevrimdışı').replace('dnd', 'Rahatsız Etmeyin').replace('idle', 'Çevrimiçi')}
                 </span>
               </div>
             </div>
