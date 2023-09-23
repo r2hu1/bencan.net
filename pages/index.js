@@ -8,7 +8,6 @@ import axios from 'axios';
 import { LuGithub } from 'react-icons/lu';
 import Link from 'next/link';
 import fs from 'fs';
-import path from 'path';
 
 export default function Home({ discord_status, articles }) {
   return <div className="w-full h-full flex justify-center">

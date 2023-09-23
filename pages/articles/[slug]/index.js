@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Head from 'next/head';
 import fs from 'fs';
-import path from 'path';
 
 const components = {
   h1: ({ node, ...props }) => <h1 className='text-xl font-semibold' {...props} />,

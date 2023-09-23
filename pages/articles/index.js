@@ -2,7 +2,6 @@ import Header from '@/pages/components/Header';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
