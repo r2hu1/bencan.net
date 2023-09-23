@@ -1,10 +1,11 @@
-import axios from 'axios';
 import Header from '@/pages/components/Header';
 import Image from 'next/image';
 import { LuCalendarDays, LuTimer } from 'react-icons/lu';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Head from 'next/head';
+import fs from 'fs';
+import path from 'path';
 
 const components = {
   h1: ({ node, ...props }) => <h1 className='text-xl font-semibold' {...props} />,
@@ -92,7 +93,27 @@ export default function Articles({ data }) {
 
 export async function getServerSideProps({ params: { slug } }) {
   try {
-    const data = await axios.get('/api/articles/' + slug).then(res => res.data).catch(() => null);
+    const files = fs.readdirSync(path.join('public', 'articles'));
+    const articles = files.map(filename => {
+      const markdownContent = fs.readFileSync(path.join('public', 'articles', filename)).toString();
+      const withoutMetadata = markdownContent.split('---').slice(2).join('---');
+      const metadata = markdownContent.split('---')[1].split('\n').reduce((acc, curr) => {
+        const [key, value] = curr.split(': ');
+        if (!key || key == '\r') return acc;
+
+        return { ...acc, [key]: value };
+      }, {});
+
+      return {
+        filename,
+        metadata,
+        markdownContent,
+        markdownWithoutMetadata: withoutMetadata
+      };
+    });
+
+    const articlesSortedByDate = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const data = articlesSortedByDate.find(article => article.filename.replace('.md', '') == slug);
     if (!data) return { notFound: true };
 
     return {
