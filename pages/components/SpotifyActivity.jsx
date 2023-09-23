@@ -83,7 +83,7 @@ export default function SpotifyActivity() {
     (!loading && data?.spotify) ? (
       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .2, delay: .2, ease: 'easeInOut' }} key={data.spotify.session_id}>
         <div className="my-3 text-xs flex items-center gap-1.5 text-tertiaryTextColor flex-wrap">
-          Şu anda <span className="text-green-400 flex items-center gap-x-1 -mr-1"><FaSpotify className='inline' size={18} /> Spotify</span>'da <Image src={data.spotify.album_art_url} width={18} height={18} className='rounded-full inline' /> <InlineLink className='text-neutral-200 inline-flex items-center -mr-1' underlineDisabled={true} to={`https://open.spotify.com/intl-tr/track/${data.spotify.track_id}`}>{data.spotify.song}</InlineLink> dinliyorum
+          Şu anda <span className="text-green-400 flex items-center gap-x-1 -mr-1"><FaSpotify className='inline' size={18} /> Spotify</span>'da <Image src={data.spotify.album_art_url} width={18} height={18} className='rounded-full inline' /> <InlineLink className='text-neutral-200 inline-flex items-center -mr-1' underlineDisabled={true} to={`https://open.spotify.com/intl-tr/track/${data.spotify.track_id}`}>{data.spotify.song}</InlineLink> dinliyorum.
         </div>
 
         <div className='flex-1 h-0.5 bg-tertiaryBackgroundColor rounded-full relative' >
