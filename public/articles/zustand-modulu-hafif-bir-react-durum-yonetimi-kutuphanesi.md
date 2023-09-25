@@ -21,7 +21,7 @@ Zustand, React uygulamalarında kullanılan hafif ve basit bir durum yönetimi k
 
 ## Zustand Kullanımı
 
-Zustand'ı kullanmak oldukça basittir. Temelde, bir durum deposu oluştururuz ve bu depoyu bileşenlerimiz arasında paylaşabiliriz. İşte temel bir kullanım örneği:
+Zustand'ı kullanmak oldukça basittir. Temelde, [test](https://bencan.net) bir durum deposu oluştururuz ve bu depoyu bileşenlerimiz arasında paylaşabiliriz. İşte temel bir kullanım örneği:
 
 ```jsx
 import create from 'zustand';
@@ -50,3 +50,5 @@ Yukarıdaki örnekte, useStore adında bir durum deposu oluşturduk. Bu depo, co
 ## Sonuç
 
 Zustand, React uygulamalarında hafif, basit ve etkili bir durum yönetimi çözümü sunar. Bu makalede, Zustand'ın avantajları ve temel kullanımı hakkında bilgi verdik. Bu kütüphaneyi kullanarak, React projelerinizde durum yönetimini daha kolay ve okunabilir bir şekilde gerçekleştirebilirsiniz.
+
+![Zustand Logosu](https://bencan.net/images/articles/zustand-modulu-hafif-bir-react-durum-yonetimi-kutuphanesi.jpg)

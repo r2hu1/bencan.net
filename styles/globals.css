@@ -8,6 +8,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.inter {
+  font-family: 'Inter', sans-serif !important;
+}
+
 code {
   font-family: monospace !important;
 }
@@ -20,6 +24,14 @@ code * {
 code * * {
   font-family: monospace !important;
   background-color: transparent !important;
+}
+
+pre {
+  background-image: url('/images/window-buttons.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 44px 10px !important;
+  background-position: 16px 14px !important;
+  padding-top: 40px !important;
 }
 
 .tippy-box {
@@ -71,6 +83,91 @@ code * * {
   display: block;
   width: 100%;
   height: 1.3px;
-  background: #FFFFFF;
   margin-top: -3px;
+}
+
+.custom-underline::after {
+  background: #000000;
+}
+
+.dark .custom-underline::after {
+  background: #FFFFFF;
+}
+
+.social-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-button:hover::before {
+  -webkit-animation: social-button-shine 0.5s 0s linear;
+  -moz-animation: social-button-shine 0.5s 0s linear;
+  animation: social-button-shine 0.5s 0s linear;
+}
+
+.social-button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  box-shadow: 0 0 50px 30px var(--color);
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes social-button-shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dark ::-webkit-scrollbar {
+  background: #323232;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #414141;
+  border-radius: 10px;
+  width: 4px;
+}
+
+::-webkit-scrollbar {
+  background: #F3F3F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D1D1;
+  border-radius: 10px;
+  width: 4px;
+}
+
+body *:not(code, code *)::selection {
+  background: #F3F3F3;
+  color: #000000;
+}
+
+.dark body *:not(code, code *)::selection {
+  background: #464646;
+  color: #FFFFFF;
 }

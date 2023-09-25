@@ -45,12 +45,6 @@ export default function Home({ discord_data, articles }) {
             <Articles articles={articles} />
             <TechStack />
             <Footer />
-
-            <Link className='w-full flex items-center justify-center text-center mt-4 rounded py-2 max-w-[94.5%] mx-auto hover:bg-light-tertiary dark:bg-dark-tertiary group cursor-pointer transition-all duration-300 ease-in-out' href='https://github.com/chimpdev/bencan.net' target='_blank'>
-              <h1 className='flex items-center gap-x-1 text-light-tertiaryText dark:text-dark-tertiaryText text-xs group-hover:text-neutral-800 dark:group-hover:text-neutral-100 transition-all duration-300 ease-in-out'>
-                Bu site <LuGithub /> Github'da açık kaynak kodlu!
-              </h1>
-            </Link>
           </OpacityMotion>
         </div>
       </div>

@@ -11,12 +11,12 @@ import { CgDarkMode } from 'react-icons/cg';
 import '@/styles/prism.css';
 import '@/styles/prism-vsc-dark-plus.css';
 import { twMerge } from 'tailwind-merge';
+import 'react-medium-image-zoom/dist/styles.css'
 
 export default function App({ Component, pageProps }) {
 
   const theme = useThemeStore(state => state.theme);
   const setTheme = useThemeStore(state => state.setTheme);
-  const toggleTheme = useThemeStore(state => state.toggleTheme);
   const [storedTheme, setThemeCookie] = useCookie('theme');
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <NextNProgress color={theme === 'dark' ? '#4f4f4f' : '#ededed'} height={3} />
+      <NextNProgress color={theme === 'dark' ? '#4f4f4f' : '#d9d9d9'} height={6} />
       <div className='min-w-[320px] bg-light-primary dark:bg-dark-primary text-light-primaryText dark:text-dark-primaryText min-h-[100dvh]'>
         <Component {...pageProps} />
       </div>
