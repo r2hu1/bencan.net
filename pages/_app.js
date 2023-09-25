@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { useCookie } from 'react-use';
 import { MdDarkMode } from 'react-icons/md';
 import { BiSolidSun } from 'react-icons/bi';
+import '@/styles/prism.css';
+import '@/styles/prism-vsc-dark-plus.css';
 
 export default function App({ Component, pageProps }) {
 

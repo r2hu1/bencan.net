@@ -8,6 +8,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+code {
+  font-family: monospace !important;
+}
+
+code * {
+  font-family: monospace !important;
+  background-color: transparent !important;
+}
+
+code * * {
+  font-family: monospace !important;
+  background-color: transparent !important;
+}
+
 .tippy-box {
   color: white;
   border-radius: 6px !important;

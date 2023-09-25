@@ -6,6 +6,9 @@ import remarkGfm from 'remark-gfm';
 import Head from 'next/head';
 import fs from 'fs';
 import OpacityMotion from '@/pages/components/OpacityMotion';
+import Prism from '@/public/prism';
+import { useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const components = {
   h1: ({ node, ...props }) => <h1 className='text-xl font-semibold' {...props} />,
@@ -16,13 +19,38 @@ const components = {
   h6: ({ node, ...props }) => <h6 className='text-xs font-semibold' {...props} />,
   hr: ({ node, ...props }) => <div className='w-full h-[2px] bg-light-tertiary dark:bg-dark-tertiary' {...props}>&thinsp;</div>,
   img: ({ node, ...props }) => <Image {...props} width={1000} height={400} className='rounded-lg object-cover max-h-[400px] h-full' />,
-  li: ({ node, ...props }) => <li className='list-disc list-inside' {...props} />,
+  li: ({ node, ...props }) => <li className='text-sm' {...props} />,
   ul: ({ node, ...props }) => <ul className='list-disc list-inside' {...props} />,
-  ol: ({ node, ...props }) => <ol className='list-decimal list-inside' {...props} />,
-  p: ({ node, ...props }) => <p className='text-light-secondaryText dark:text-dark-secondaryText' {...props} />,
+  ol: ({ node, ...props }) => <ol className='list-decimal list-outside px-4 flex gap-y-2 flex-col' {...props} ordered={true} />,
+  p: ({ node, ...props }) => <p className='text-light-secondaryText dark:text-dark-secondaryText items-center text-sm' {...props} />,
   strong: ({ node, ...props }) => <strong className='font-semibold' {...props} />,
-  pre: ({ node, ...props }) => <pre className='bg-light-secondary dark:bg-dark-secondary rounded-lg p-2' {...props} />,
-  a: ({ node, ...props }) => <a className='text-light-primaryText dark:text-dark-primaryText hover:underline' {...props} />
+  a: ({ node, ...props }) => <a className='text-light-primaryText dark:text-dark-primaryText hover:underline' {...props} />,
+  pre: ({ node, ...props }) => {
+    const [copied, setCopied] = useState(false);
+    let language = props.children[0].props.className.split('-')[1];
+
+    return (
+      <pre className={`relative rounded-lg overflow-x-auto p-4 !text-sm language-${language} line-numbers whitespace-pre-wrap`} {...props}>
+        <div className='w-full h-max absolute justify-end flex right-4 top-2.5'>
+          <span className={twMerge(
+            'bg-[#242424] px-2 py-2 rounded-lg font-medium cursor-pointer hover:opacity-60 transition-all duration-300 ease-in-out select-none',
+            copied && 'opacity-60 cursor-default'
+          )} onClick={() => {
+            if (copied) return;
+
+            navigator.clipboard.writeText(props.children[0].props.children);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1000);
+          }}>
+            {copied ? 'Kopyalandı!' : 'Kopyala'}
+          </span>
+        </div>
+        <code>
+          {props.children[0].props.children}
+        </code>
+      </pre>
+    );
+  }
 };
 
 export default function Articles({ data }) {
@@ -31,6 +59,12 @@ export default function Articles({ data }) {
   const numberOfWords = data.markdownWithoutMetadata.split(/\s/g).length;
   const minutes = numberOfWords / wordsPerMinute;
   const readTime = Math.ceil(minutes);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, []);
 
   return (
     <>
