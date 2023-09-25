@@ -1,6 +1,6 @@
 import Seperator from './Seperator';
 import social from '@/data/social.json';
-import { LuArrowUpRight } from 'react-icons/lu';
+import { LuArrowUpRight, LuGithub } from 'react-icons/lu';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
 
@@ -25,6 +25,10 @@ export default function Footer() {
             </Link>
           ))}
         </div>
+
+        <Link href='https://github.com/chimpdev/bencan.net' target='_blank' className='w-full py-2 text-center hover:opacity-80 cursor-pointer font-medium rounded mt-2 hover:bg-light-tertiary hover:dark:bg-dark-tertiary text-light-primaryText dark:text-dark-primaryText text-sm'>
+          Bu website <LuGithub className='inline-block ml-1' /> GitHub'da açık kaynak kodludur.
+        </Link>
       </div>
     </>
   );
