@@ -14,15 +14,15 @@ const components = {
   h4: ({ node, ...props }) => <h4 className='text-sm font-semibold' {...props} />,
   h5: ({ node, ...props }) => <h5 className='text-xs font-semibold' {...props} />,
   h6: ({ node, ...props }) => <h6 className='text-xs font-semibold' {...props} />,
-  hr: ({ node, ...props }) => <div className='w-full h-[2px] bg-tertiaryBackgroundColor' {...props}>&thinsp;</div>,
+  hr: ({ node, ...props }) => <div className='w-full h-[2px] bg-light-tertiary dark:bg-dark-tertiary' {...props}>&thinsp;</div>,
   img: ({ node, ...props }) => <Image {...props} width={1000} height={400} className='rounded-lg object-cover max-h-[400px] h-full' />,
   li: ({ node, ...props }) => <li className='list-disc list-inside' {...props} />,
   ul: ({ node, ...props }) => <ul className='list-disc list-inside' {...props} />,
   ol: ({ node, ...props }) => <ol className='list-decimal list-inside' {...props} />,
-  p: ({ node, ...props }) => <p className='text-secondaryTextColor' {...props} />,
+  p: ({ node, ...props }) => <p className='text-light-secondaryText dark:text-dark-secondaryText' {...props} />,
   strong: ({ node, ...props }) => <strong className='font-semibold' {...props} />,
-  pre: ({ node, ...props }) => <pre className='bg-secondaryBackgroundColor rounded-lg p-2' {...props} />,
-  a: ({ node, ...props }) => <a className='text-primaryTextColor hover:underline' {...props} />
+  pre: ({ node, ...props }) => <pre className='bg-light-secondary dark:bg-dark-secondary rounded-lg p-2' {...props} />,
+  a: ({ node, ...props }) => <a className='text-light-primaryText dark:text-dark-primaryText hover:underline' {...props} />
 };
 
 export default function Articles({ data }) {
@@ -80,7 +80,7 @@ export default function Articles({ data }) {
               </h1>
 
               <div className='flex items-center gap-x-2 mt-8'>
-                <ReactMarkdown className='text-lg text-secondaryTextColor w-full h-full flex flex-col gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
+                <ReactMarkdown className='text-lg text-light-secondaryText dark:text-dark-secondaryText w-full h-full flex flex-col gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
                   {data.markdownWithoutMetadata}
                 </ReactMarkdown>
               </div>

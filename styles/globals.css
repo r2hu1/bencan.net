@@ -16,9 +16,9 @@
   padding: 2px 4px !important;
   text-align: center;
   margin-bottom: 5px !important;
-  background: black !important;
+  background: #F3F3F3 !important;
   transition-duration: 200ms !important;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2) !important;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   width: max-content !important;
 }
@@ -34,6 +34,15 @@
 }
 
 .tippy-arrow {
+  color: white !important;
+}
+
+.dark .tippy-box {
+  background: black !important;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .tippy-arrow {
   color: black !important;
 }
 

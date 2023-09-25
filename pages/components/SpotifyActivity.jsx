@@ -82,24 +82,24 @@ export default function SpotifyActivity() {
   return (
     (!loading && data?.spotify) ? (
       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .2, delay: .2, ease: 'easeInOut' }} key={data.spotify.session_id}>
-        <div className="my-3 text-xs flex items-center gap-1.5 text-tertiaryTextColor flex-wrap">
-          Şu anda <span className="text-green-400 flex items-center gap-x-1 -mr-1"><FaSpotify className='inline' size={18} /> Spotify</span>'da <Image src={data.spotify.album_art_url} width={18} height={18} className='rounded-full inline' /> <InlineLink className='text-neutral-200 inline-flex items-center -mr-1' underlineDisabled={true} to={`https://open.spotify.com/intl-tr/track/${data.spotify.track_id}`}>{data.spotify.song}</InlineLink> dinliyorum.
+        <div className="my-3 text-xs flex items-center gap-1.5 text-light-tertiaryText dark:text-dark-tertiaryText flex-wrap">
+          Şu anda <span className="text-green-400 flex items-center gap-x-1 -mr-1"><FaSpotify className='inline' size={18} /> Spotify</span>'da <Image src={data.spotify.album_art_url} width={18} height={18} className='rounded-full inline' alt='Spotify Logo' /> <InlineLink className='text-light-primaryText dark:text-neutral-200 inline-flex items-center -mr-1' underlineDisabled={true} to={`https://open.spotify.com/intl-tr/track/${data.spotify.track_id}`}>{data.spotify.song}</InlineLink> dinliyorum.
         </div>
 
-        <div className='flex-1 h-0.5 bg-tertiaryBackgroundColor rounded-full relative' >
+        <div className='flex-1 h-0.5 bg-light-tertiary dark:bg-dark-tertiary rounded-full relative' >
           <div className='h-full bg-green-500 rounded-full absolute transition-all duration-1000 ease-in-out' style={{ width: `${(currentSeconds / totalSeconds) * 100}%` }} />
-          <span className="h-full w-full rounded-full absolute transition-all duration-1000 ease-in-out flex justify-end items-center left-8 text-xs text-tertiaryTextColor" style={{ maxWidth: `${(currentSeconds / totalSeconds) * 100}%` }}>
+          <span className="h-full w-full rounded-full absolute transition-all duration-1000 ease-in-out flex justify-end items-center left-8 text-xs text-light-tertiaryText dark:text-dark-tertiaryText" style={{ maxWidth: `${(currentSeconds / totalSeconds) * 100}%` }}>
             {Math.floor(currentSeconds / 60)}:{currentSeconds % 60 < 10 ? `0${currentSeconds % 60}` : currentSeconds % 60}
           </span>
         </div>
       </motion.div>
     ) : (loading && (
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .2, delay: .2, ease: 'easeInOut' }} key={'loadingSpotifyActivity'}>
-        <div className="my-3 text-xs flex items-center gap-1.5 text-tertiaryTextColor flex-wrap">
+        <div className="my-3 text-xs flex items-center gap-1.5 text-light-tertiaryText dark:text-dark-tertiaryText flex-wrap">
           <span className="text-green-400 flex items-center gap-x-1 -mr-1"><FaSpotify className='inline' size={18} /> Spotify</span> aktivitesi yükleniyor..
         </div>
 
-        <div className='flex-1 h-0.5 bg-tertiaryBackgroundColor rounded-full relative' />
+        <div className='flex-1 h-0.5 bg-light-tertiary dark:bg-dark-tertiary rounded-full relative' />
       </motion.div>
     ))
   );

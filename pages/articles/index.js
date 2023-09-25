@@ -12,11 +12,11 @@ import { LuBookMarked } from 'react-icons/lu';
 export function ArticleCard(props) {
   return (
     <motion.div className='flex justify-between' {...props}>
-      <Link className='flex flex-col gap-y-2 w-full bg-secondaryBackgroundColor hover:bg-tertiaryBackgroundColor p-4 rounded-2xl relative hover:scale-105 transition-all duration-100 ease-in-out cursor-pointer' href={`/articles/${props.data.filename.replace('.md', '')}`}>
+      <Link className='flex flex-col gap-y-2 w-full bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary dark:hover:bg-dark-tertiary p-4 rounded-2xl relative hover:scale-105 transition-all duration-100 ease-in-out cursor-pointer' href={`/articles/${props.data.filename.replace('.md', '')}`}>
         <Image className='w-full h-[150px] absolute top-0 left-0 rounded-t-2xl object-cover' src={props.data.metadata.image} alt='Article Image' width={700} height={300} />
-        <span className='text-xs text-tertiaryTextColor pt-[150px]'>{new Date(props.data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <span className='text-xs text-light-tertiaryText dark:text-dark-tertiaryText pt-[150px]'>{new Date(props.data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
         <h2 className='text-lg font-semibold'>{props.data.metadata.title}</h2>
-        <p className='text-base text-secondaryTextColor'>
+        <p className='text-base text-light-secondaryText dark:text-dark-secondaryText'>
           {props.data.metadata.description}
         </p>
       </Link>
@@ -55,7 +55,7 @@ export default function Articles({ articles }) {
               </div>
 
               <button className={twMerge(
-                'bg-secondaryBackgroundColor hover:bg-tertiaryBackgroundColor duration-300 ease-in-out transition-all text-sm text-primaryTextColor rounded w-full py-2 font-medium',
+                'bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary hover:dark:bg-dark-tertiary duration-300 ease-in-out transition-all text-sm text-light-primaryText dark:text-dark-primaryText rounded w-full py-2 font-medium',
                 limit >= articles.length ? 'opacity-0 translate-y-5 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'
               )} onClick={() => {
                 if (limit >= articles.length) return;

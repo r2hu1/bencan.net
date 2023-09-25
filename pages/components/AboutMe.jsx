@@ -8,15 +8,15 @@ import InlineLink from './InlineLink';
 export default function AboutMe({ discord_data, activityData }) {
   return (
     <div className="mx-6 mt-28 flex flex-col">
-      <div className="w-20 h-20 bg-secondaryBackgroundColor rounded-full relative">
+      <div className="w-20 h-20 bg-light-secondary dark:bg-dark-secondary rounded-full relative">
         <Image src='/homeAvatar.png' alt="Home Avatar" width={626} height={626} priority={true} />
         <div className='absolute bottom-1.5 right-1.5'>
           <Tippy content={<>
             <div className='flex gap-x-2 items-center'>
-              <Image src={`https://cdn.discordapp.com/avatars/${discord_data?.discord_user.id}/${discord_data?.discord_user.avatar}.png`} width={128} height={128} className='rounded-full h-[28px] w-[28px]' />
+              <Image src={`https://cdn.discordapp.com/avatars/${discord_data?.discord_user.id}/${discord_data?.discord_user.avatar}.png`} width={128} height={128} className='rounded-full h-[28px] w-[28px]' alt="Discord Avatar" />
               <div className='flex flex-col'>
-                <InlineLink className='font-medium text-primaryTextColor hover:underline' to={`https://discord.com/users/${discord_data?.discord_user.id}`} underlineDisabled={true}>@{discord_data?.discord_user.username}</InlineLink>
-                <span className='text-secondaryTextColor text-xs flex items-center gap-x-1'>
+                <InlineLink className='font-medium text-light-primaryText dark:text-dark-primaryText hover:underline' to={`https://discord.com/users/${discord_data?.discord_user.id}`} underlineDisabled={true}>@{discord_data?.discord_user.username}</InlineLink>
+                <span className='text-light-secondaryText dark:text-dark-secondaryText text-xs flex items-center gap-x-1'>
                   <motion.span className={twMerge(
                     'w-2 h-2 rounded-full block',
                     `bg-discordStatus-${discord_data?.discord_status}` // bg-discordStatus-online bg-discordStatus-offline bg-discordStatus-dnd bg-discordStatus-idle
@@ -35,11 +35,11 @@ export default function AboutMe({ discord_data, activityData }) {
       </div>
 
       <div className="mt-4">
-        <h2 className='text-2xl font-medium text-primaryTextColor'>
+        <h2 className='text-2xl font-medium text-light-primaryText dark:text-dark-primaryText'>
           Full-stack developer
         </h2>
 
-        <p className='mt-4 text-lg text-secondaryTextColor font-normal'>
+        <p className='mt-4 text-lg text-light-secondaryText dark:text-dark-secondaryText font-normal'>
           Gökhan, 17 yaşında, İstanbul. Kodlama, Discord.js ve React. Freelance. Sosyal değil. Açık lise öğrencisi, iyi bir yazılımcı olmak istiyor.
         </p>
 

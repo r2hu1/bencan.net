@@ -6,12 +6,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryBackgroundColor: '#2A2A2A',
-        secondaryBackgroundColor: '#2E2E2E',
-        tertiaryBackgroundColor: '#323232',
-        primaryTextColor: '#FFFFFF',
-        secondaryTextColor: '#FFFFFFB2',
-        tertiaryTextColor: '#FFFFFF80',
+        dark: {
+          primary: '#2A2A2A',
+          secondary: '#2E2E2E',
+          tertiary: '#323232',
+          primaryText: '#FFFFFF',
+          secondaryText: '#FFFFFFB2',
+          tertiaryText: '#FFFFFF80'
+        },
+
+        light: {
+          primary: '#FFFFFF',
+          secondary: '#F9F9F9',
+          tertiary: '#F3F3F3',
+          primaryText: '#212121',
+          secondaryText: '#666666',
+          tertiaryText: '#909090'
+        },
+
         discordStatus: {
           offline: '#FFFFFF30',
           online: '#43B581',
@@ -32,4 +44,5 @@ module.exports = {
     }
   },
   plugins: [],
+  darkMode: 'class'
 }

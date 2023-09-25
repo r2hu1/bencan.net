@@ -12,20 +12,20 @@ export function WebsiteCard(props) {
   return (
     <motion.div className='flex justify-between w-full h-full' {...props}>
       <div className='flex flex-col max-w-[383px] gap-y-2 w-full'>
-        <span className='text-xs text-tertiaryTextColor'>{props.data.year}</span>
+        <span className='text-xs text-light-tertiaryText dark:text-dark-tertiaryText'>{props.data.year}</span>
         <h2 className='text-sm sm:text-lg font-semibold truncate max-w-[100px] mobile:max-w-full'>{props.data.name}</h2>
-        <p className='text-xs sm:text-base text-secondaryTextColor'>
+        <p className='text-xs sm:text-base text-light-secondaryText dark:text-dark-secondaryText'>
           {props.data.description}
         </p>
         {props.data.link && (
-          <InlineLink to={props.data.link} className='text-lg text-primaryTextColor'>
+          <InlineLink to={props.data.link} className='text-lg text-light-primaryText dark:text-dark-primaryText'>
             Git
           </InlineLink>
         )}
       </div>
 
       {props.data.image && (
-        <div className='bg-secondaryBackgroundColor rounded-2xl h-full min-h-[145px] max-w-[145px] w-full flex justify-center relative overflow-hidden ml-2'>
+        <div className='bg-light-secondary dark:bg-dark-secondary rounded-2xl h-full min-h-[145px] max-w-[145px] w-full flex justify-center relative overflow-hidden ml-2'>
           <Image src='/iPhoneMockup.png' width={100} height={145} alt='iPhone Mockup' className='mt-4 z-[1]' />
           <Image src={props.data.image} width={90} height={145} alt='Website Mockup' className='absolute top-6' />
         </div>
@@ -57,7 +57,7 @@ export default function Websites({ createdWebsites }) {
                 <LuPalmtree /> Yaptığım Websiteler
               </h1>
 
-              <p className='text-secondaryTextColor text-sm mt-4'>
+              <p className='text-light-secondaryText dark:text-dark-secondaryText text-sm mt-4'>
                 Bazı teknolojileri kullanarak hem kendimi geliştirmek için hemde başkalarına yardımcı olmak için yaptığım websiteler.
               </p>
 
@@ -68,7 +68,7 @@ export default function Websites({ createdWebsites }) {
               </div>
 
               <button className={twMerge(
-                'bg-secondaryBackgroundColor hover:bg-tertiaryBackgroundColor duration-300 ease-in-out transition-all text-sm text-primaryTextColor rounded w-full py-2 font-medium',
+                'bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary hover:dark:bg-dark-tertiary duration-300 ease-in-out transition-all text-sm text-light-primaryText dark:text-dark-primaryText rounded w-full py-2 font-medium',
                 limit >= createdWebsites.length ? 'opacity-0 translate-y-5 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'
               )} onClick={() => {
                 if (limit >= createdWebsites.length) return;

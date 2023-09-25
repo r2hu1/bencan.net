@@ -56,7 +56,7 @@ export default function Footer() {
     <>
       <Seperator />
       <div className="mx-6 flex flex-col">
-        <div className='text-lg text-tertiaryTextColor flex justify-between'>
+        <div className='text-lg text-light-tertiaryText dark:text-dark-tertiaryText flex justify-between'>
           <h1>
             Bana Ulaş
           </h1>
@@ -93,7 +93,7 @@ export default function Footer() {
           </motion.div>
 
           <div className='flex flex-col gap-y-2'>
-            <h1 className='mobile:hidden flex items-center gap-x-1 text-lg text-tertiaryTextColor'>
+            <h1 className='mobile:hidden flex items-center gap-x-1 text-lg text-light-tertiaryText dark:text-dark-tertiaryText'>
               {feedbackSending ? (
                 <>
                   <LuLoader2 className='animate-spin inline' size={18} />
@@ -119,7 +119,7 @@ export default function Footer() {
                   setHoveredStarIndex(index);
                 }} onMouseLeave={() => setHoveredStarIndex(-1)} className='cursor-pointer' onClick={() => feedback(index)}>
                   <AiFillStar className={twMerge(
-                    index <= hoveredStarIndex ? 'text-yellow-600' : 'text-tertiaryTextColor', 
+                    index <= hoveredStarIndex ? 'text-yellow-600' : 'text-light-tertiaryText dark:text-dark-tertiaryText', 
                     (feedbackSending || feedbackSent) && 'opacity-20 cursor-not-allowed'
                   )} key={index} size={20} />
                 </div>
