@@ -45,7 +45,7 @@ export default function Header() {
       <div className="mt-16 flex mb-1.5 gap-x-4  flex-wrap">
         {links.map((link, index) => (
           <Link href={link.link} key={index} className={twMerge(
-            'my-3 text-base flex items-center gap-x-1 hover:bg-light-tertiary dark:bg-dark-tertiary px-3 mx-2 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-light-tertiaryText dark:text-dark-tertiaryText hover:text-light-primaryText dark:text-dark-primaryText select-none',
+            'my-3 text-base flex items-center gap-x-1 hover:bg-light-tertiary dark:bg-dark-tertiary px-3 mx-2 py-2 rounded-lg transition-all duration-300 ease-in-out font-medium text-light-tertiaryText dark:text-dark-tertiaryText hover:text-light-primaryText hover:dark:text-dark-primaryText select-none',
             pathname === link.link ? 'bg-light-tertiary dark:bg-dark-tertiary cursor-default text-light-primaryText dark:text-dark-primaryText' : 'bg-light-primary dark:bg-dark-primary cursor-pointer'
           )} onClick={e => pathname === link.link && e.preventDefault()}>
             {link.icon && <link.icon />}
