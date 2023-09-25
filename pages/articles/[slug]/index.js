@@ -33,7 +33,7 @@ const components = {
       <pre className={`relative rounded-lg overflow-x-auto p-4 !text-sm language-${language} line-numbers whitespace-pre-wrap`} {...props}>
         <div className='w-full h-max absolute justify-end flex right-4 top-2.5'>
           <span className={twMerge(
-            'bg-[#242424] px-2 py-2 rounded-lg font-medium cursor-pointer hover:opacity-60 transition-all duration-300 ease-in-out select-none',
+            'bg-[#242424] px-2 py-2 rounded-lg font-medium cursor-pointer hover:opacity-60 transition-all duration-300 ease-in-out select-none fixed text-neutral-200',
             copied && 'opacity-60 cursor-default'
           )} onClick={() => {
             if (copied) return;
