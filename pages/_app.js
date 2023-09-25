@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href="https://bencan.net" />
       </Head>
 
-      <NextNProgress color={theme === 'dark' ? '#4f4f4f' : '#fff'} height={3} />
+      <NextNProgress color={theme === 'dark' ? '#4f4f4f' : '#ededed'} height={3} />
       <div className='min-w-[320px] bg-light-primary dark:bg-dark-primary text-light-primaryText dark:text-dark-primaryText min-h-[100dvh]'>
         <Component {...pageProps} />
       </div>
