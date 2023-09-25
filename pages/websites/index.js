@@ -43,9 +43,24 @@ export default function Websites({ createdWebsites }) {
       <Head>
         <title>{`bencan.net: Yaptığım Websiteler`}</title>
         <meta name="description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
+        <meta name="author" content="Discord @ben.can" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="bencan.net" />
         <meta property="og:description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <meta property="og:image" content="https://bencan.net/images/og-image.png" />
         <meta property="og:url" content="https://bencan.net/websites" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="tr_TR" />
+
+        <meta name="twitter:title" content="bencan.net" />
         <meta name="twitter:description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <meta name="twitter:image" content="https://bencan.net/images/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://bencan.net" />
       </Head>
 
       <div className="w-full h-full flex justify-center">

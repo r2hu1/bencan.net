@@ -21,7 +21,7 @@ const components = {
   img: ({ node, ...props }) => <Image {...props} width={1000} height={400} className='rounded-lg object-cover max-h-[400px] h-full' />,
   li: ({ node, ...props }) => <li className='text-sm' {...props} />,
   ul: ({ node, ...props }) => <ul className='list-disc list-inside' {...props} />,
-  ol: ({ node, ...props }) => <ol className='list-decimal list-outside px-4 flex gap-y-2 flex-col' {...props} ordered={true} />,
+  ol: ({ node, ...props }) => <ol className='list-decimal list-outside px-4 flex gap-y-2 flex-col' {...props} />,
   p: ({ node, ...props }) => <p className='text-light-secondaryText dark:text-dark-secondaryText items-center text-sm' {...props} />,
   strong: ({ node, ...props }) => <strong className='font-semibold' {...props} />,
   a: ({ node, ...props }) => <a className='text-light-primaryText dark:text-dark-primaryText hover:underline' {...props} />,
@@ -71,9 +71,24 @@ export default function Articles({ data }) {
       <Head>
         <title>{`bencan.net: ${data.metadata.title}`}</title>
         <meta name="description" content={data.metadata.description} />
+        <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
+        <meta name="author" content="Discord @ben.can" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="bencan.net" />
         <meta property="og:description" content={data.metadata.description} />
+        <meta property="og:image" content="https://bencan.net/images/og-image.png" />
         <meta property="og:url" content={`https://bencan.net/articles/${data.filename.replace('.md', '')}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="tr_TR" />
+
+        <meta name="twitter:title" content="bencan.net" />
         <meta name="twitter:description" content={data.metadata.description} />
+        <meta name="twitter:image" content="https://bencan.net/images/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://bencan.net" />
       </Head>
 
       <div className="w-full h-full flex justify-center">
