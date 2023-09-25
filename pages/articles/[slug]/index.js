@@ -74,21 +74,21 @@ export default function Articles({ data }) {
         <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
         <meta name="author" content="Discord @ben.can" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="bencan.net" />
+        <meta property="og:title" content={`bencan.net: ${data.metadata.title}`} />
         <meta property="og:description" content={data.metadata.description} />
-        <meta property="og:image" content="https://bencan.net/images/og-image.png" />
+        <meta property="og:image" content={`https://bencan.net/_next/image?url=${data.metadata.image}&w=2048&q=75`} />
         <meta property="og:url" content={`https://bencan.net/articles/${data.filename.replace('.md', '')}`} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="tr_TR" />
 
-        <meta name="twitter:title" content="bencan.net" />
+        <meta name="twitter:title" content={`bencan.net: ${data.metadata.title}`} />
         <meta name="twitter:description" content={data.metadata.description} />
-        <meta name="twitter:image" content="https://bencan.net/images/og-image.png" />
+        <meta name="twitter:image" content={`https://bencan.net/_next/image?url=${data.metadata.image}&w=2048&q=75`} />
         <meta name="twitter:card" content="summary_large_image" />
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://bencan.net" />
+        <link rel="canonical" href={`https://bencan.net/articles/${data.filename.replace('.md', '')}`} />
       </Head>
 
       <div className="w-full h-full flex justify-center">

@@ -20,10 +20,10 @@ export default function Home({ discord_data, articles }) {
         <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
         <meta name="author" content="Discord @ben.can" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="bencan.net" />
+        <meta property="og:title" content={`bencan.net: Anasayfa`} />
         <meta property="og:description" content="Benim kişisel web sitem." />
         <meta property="og:image" content="https://bencan.net/images/og-image.png" />
-        <meta property="og:url" content="https://bencan.net" />
+        <meta property="og:url" content={`https://bencan.net`} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="tr_TR" />
 
