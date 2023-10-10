@@ -83,7 +83,7 @@ export default function Articles({ data, backArticle, nextArticle }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') Prism.highlightAll();
-  }, []);
+  }, [data.metadata.title]);
 
   return (
     <>
