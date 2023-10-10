@@ -24,18 +24,18 @@ const components = {
   hr: ({ node, ...props }) => <div className='w-full h-[2px] bg-light-tertiary dark:bg-dark-tertiary' {...props}>&thinsp;</div>,
   img: ({ node, ...props }) => {
     return (
-      <div className='flex flex-col gap-y-2 text-xs'>
+      <div className='flex flex-col my-4 text-xs gap-y-2'>
         <Zoom classDialog='[&>[data-rmiz-modal-overlay]]:bg-black/0 [&_button]:hidden [&_img]:rounded-lg'>
-          <Image {...props} width={1000} height={400} className='rounded-lg object-cover max-h-[400px] h-full' />
+          <Image {...props} width={1000} height={400} className='rounded-lg object-cover max-h-[400px] h-full' quality={100} />
         </Zoom>
-        <p className='text-center text-light-secondaryText dark:text-dark-secondaryText'>{props.alt}</p>
+        <span className='text-center text-light-tertiaryText dark:text-dark-tertiaryText'>{props.alt}</span>
       </div>
     )
   },
   li: ({ node, ...props }) => <li className='text-sm' {...props} />,
   ul: ({ node, ...props }) => <ul className='list-disc list-inside' {...props} />,
-  ol: ({ node, ...props }) => <ol className='list-decimal list-outside px-4 flex gap-y-2 flex-col' {...props} />,
-  p: ({ node, ...props }) => <p className='text-light-secondaryText dark:text-dark-secondaryText items-center text-sm' {...props} />,
+  ol: ({ node, ...props }) => <ol className='flex flex-col px-4 list-decimal list-outside gap-y-2' {...props} />,
+  p: ({ node, ...props }) => <p className='items-center text-sm text-light-secondaryText dark:text-dark-secondaryText' {...props} />,
   strong: ({ node, ...props }) => <strong className='font-semibold' {...props} />,
   a: ({ node, ...props }) => <InlineLink {...props} />,
   pre: ({ node, ...props }) => {
@@ -110,14 +110,14 @@ export default function Articles({ data, backArticle, nextArticle }) {
         <link rel="canonical" href={`https://bencan.net/articles/${data.filename.replace('.md', '')}`} />
       </Head>
 
-      <div className="w-full h-full flex justify-center">
+      <div className="flex justify-center w-full h-full">
 
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
           <OpacityMotion>
-            <div className="mx-6 mt-28 flex flex-col">
+            <div className="flex flex-col mx-6 mt-28">
               <motion.div className='relative max-w-[1000px] max-h-[400px] group' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/80 rounded-lg hidden sm:flex items-end p-6 justify-between gap-2 text-sm font-medium text-neutral-400'>
+                <div className='absolute top-0 left-0 items-end justify-between hidden w-full h-full gap-2 p-6 text-sm font-medium rounded-lg bg-gradient-to-b from-transparent to-black/80 sm:flex text-neutral-400'>
                   <div className='flex items-center gap-x-1'>
                     <LuCalendarDays />
                     <div>{new Date(data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
@@ -128,10 +128,10 @@ export default function Articles({ data, backArticle, nextArticle }) {
                     <div>{readTime} dakika okuma süresi</div>
                   </div>
                 </div>
-                <Image src={data.metadata.image} alt={data.metadata.title} width={1000} height={300} className='rounded-lg object-cover max-h-[300px]' />
+                <Image src={data.metadata.image} alt={data.metadata.title} width={1000} height={300} className='rounded-lg object-cover max-h-[300px]' quality={100} />
               </motion.div>
 
-              <motion.div className='flex sm:hidden gap-2 flex-wrap mt-4 text-sm font-medium text-neutral-400' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <motion.div className='flex flex-wrap gap-2 mt-4 text-sm font-medium sm:hidden text-neutral-400' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                 <div className='flex items-center gap-x-1'>
                   <LuCalendarDays />
                   <div>{new Date(data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
@@ -143,45 +143,45 @@ export default function Articles({ data, backArticle, nextArticle }) {
                 </div>
               </motion.div>
 
-              <motion.h1 className='text-2xl font-extrabold mt-8 sm:mt-4 text-justify' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <motion.h1 className='mt-8 text-2xl font-extrabold text-justify sm:mt-4' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                 {data.metadata.title}
               </motion.h1>
 
-              <motion.h2 className='mt-2 text-sm text-light-secondaryText dark:text-dark-secondaryText text-justify' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+              <motion.h2 className='mt-2 text-sm text-justify text-light-secondaryText dark:text-dark-secondaryText' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                 {data.metadata.description}
               </motion.h2>
 
-              <motion.div className='flex items-center gap-x-2 mt-8' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                <ReactMarkdown className='text-lg text-light-primaryText dark:text-dark-primaryText w-full h-full flex flex-col gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
+              <motion.div className='flex items-center mt-8 gap-x-2' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                <ReactMarkdown className='flex flex-col w-full h-full text-lg text-light-primaryText dark:text-dark-primaryText gap-y-5' remarkPlugins={[remarkGfm]} components={components}>
                   {data.markdownWithoutMetadata}
                 </ReactMarkdown>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                <h3 className='text-sm font-semibold mt-4'>
+                <h3 className='mt-4 text-sm font-semibold'>
                   Diğer Makaleler
                 </h3>
                 <div className='flex w-full mt-3 text-sm gap-[0.5px] text-light-secondaryText dark:text-dark-secondaryText select-none'>
                   {nextArticle ? (
-                    <Link className='w-full bg-light-secondary dark:bg-dark-secondary text-center p-2 cursor-pointer hover:bg-light-tertiary hover:dark:bg-dark-tertiary transition-all duration-300 rounded-l-lg flex items-center gap-x-2 border border-light-tertiary dark:border-dark-tertiary' href={nextArticle.filename.replace('.md', '')}>
+                    <Link className='flex items-center w-full p-2 text-center transition-all duration-300 border rounded-l-lg cursor-pointer bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary hover:dark:bg-dark-tertiary gap-x-2 border-light-tertiary dark:border-dark-tertiary' href={nextArticle.filename.replace('.md', '')}>
                       <LuArrowLeft />
                       <span className='max-w-[260px] truncate'>{nextArticle.metadata.title}</span>
                     </Link>
                   ) : (
-                    <div className='w-full bg-light-secondary dark:bg-dark-secondary text-center p-2 opacity-60 rounded-l-lg flex items-center gap-x-2 border border-light-tertiary dark:border-dark-tertiary'>
+                    <div className='flex items-center w-full p-2 text-center border rounded-l-lg bg-light-secondary dark:bg-dark-secondary opacity-60 gap-x-2 border-light-tertiary dark:border-dark-tertiary'>
                       <LuArrowLeft />
-                      Önceki Makele Yok
+                      Yok
                     </div>
                   )}
 
                   {backArticle ? (
-                    <Link className='w-full bg-light-secondary dark:bg-dark-secondary text-center p-2 cursor-pointer hover:bg-light-tertiary hover:dark:bg-dark-tertiary transition-all duration-300 rounded-r-lg flex items-center gap-x-2 border border-light-tertiary dark:border-dark-tertiary justify-end' href={backArticle.filename.replace('.md', '')}>
+                    <Link className='flex items-center justify-end w-full p-2 text-center transition-all duration-300 border rounded-r-lg cursor-pointer bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary hover:dark:bg-dark-tertiary gap-x-2 border-light-tertiary dark:border-dark-tertiary' href={backArticle.filename.replace('.md', '')}>
                       <span className='max-w-[260px] truncate'>{backArticle.metadata.title}</span>
                       <LuArrowRight />
                     </Link>
                   ) : (
-                    <div className='w-full bg-light-secondary dark:bg-dark-secondary text-center p-2 opacity-60 rounded-r-lg flex items-center gap-x-2 border border-light-tertiary dark:border-dark-tertiary justify-end'>
-                      Sonraki Makele Yok
+                    <div className='flex items-center justify-end w-full p-2 text-center border rounded-r-lg bg-light-secondary dark:bg-dark-secondary opacity-60 gap-x-2 border-light-tertiary dark:border-dark-tertiary'>
+                      Yok
                       <LuArrowRight />
                     </div>
                   )}

@@ -12,8 +12,8 @@ import { LuBookMarked } from 'react-icons/lu';
 export function ArticleCard(props) {
   return (
     <motion.div className='flex justify-between' {...props}>
-      <Link className='flex flex-col gap-y-2 w-full bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary dark:hover:bg-dark-tertiary p-4 rounded-2xl relative hover:scale-105 transition-all duration-100 ease-in-out cursor-pointer' href={`/articles/${props.data.filename.replace('.md', '')}`}>
-        <Image className='w-full h-[150px] absolute top-0 left-0 rounded-t-2xl object-cover' src={props.data.metadata.image} alt='Article Image' width={700} height={300} />
+      <Link className='relative flex flex-col w-full p-4 transition-all duration-100 ease-in-out cursor-pointer gap-y-2 bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary dark:hover:bg-dark-tertiary rounded-2xl hover:scale-105' href={`/articles/${props.data.filename.replace('.md', '')}`}>
+        <Image className='w-full h-[150px] absolute top-0 left-0 rounded-t-2xl object-cover' src={props.data.metadata.image} alt='Article Image' width={700} height={300} quality={100} />
         <span className='text-xs text-light-tertiaryText dark:text-dark-tertiaryText pt-[150px]'>{new Date(props.data.metadata.date).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
         <h2 className='text-lg font-semibold'>{props.data.metadata.title}</h2>
         <p className='text-base text-light-secondaryText dark:text-dark-secondaryText'>
@@ -52,18 +52,18 @@ export default function Articles({ articles }) {
         <link rel="canonical" href="https://bencan.net/articles" />
       </Head>
 
-      <div className="w-full h-full flex justify-center">
+      <div className="flex justify-center w-full h-full">
 
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
 
           <OpacityMotion>
-            <div className="mx-6 mt-28 flex flex-col">
-              <h1 className='text-lg flex items-center gap-x-1'>
+            <div className="flex flex-col mx-6 mt-28">
+              <h1 className='flex items-center text-lg gap-x-1'>
                 <LuBookMarked /> Makaleler
               </h1>
 
-              <div className='my-8 flex flex-col gap-y-8'>
+              <div className='flex flex-col my-8 gap-y-8'>
                 {articles.slice(0, limit).map((article, index) => (
                   <ArticleCard className='flex justify-between' key={index} data={article} />
                 ))}
