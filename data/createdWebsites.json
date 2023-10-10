@@ -1,5 +1,12 @@
 [
   {
+    "name": "Discord SFX",
+    "description": "Discord SFX, Discord sunucunuzun ses panosu için ses efektleri indirebileceğiniz ve paylaşabileceğiniz bir web sitesidir.",
+    "year": "2023",
+    "link": "https://discordsfx.com",
+    "image": "/images/websites/discordsfx-com.png"
+  },
+  {
     "name": "psimed.com.tr",
     "description": "Psikoloji, Psikiyatri ve Psikoterapi Merkezi olan Psimed'in React.js ile geliştirilen web sitesidir.",
     "year": "2023",
@@ -23,11 +30,6 @@
   {
     "name": "Codexa",
     "description": "Ücretsiz kod paylaşım sitesi, Discord yardım kanallarıyla destek sağlayan bir platformdu.",
-    "year": "2023"
-  },
-  {
-    "name": "Discord Sounds",
-    "description": "Discord sunucularında ses paneline eklemek için kullanılabilecek komik ses dosyaları sağlayan bir platformdu. Başlamadan bitti.",
     "year": "2023"
   },
   {
