@@ -4,7 +4,6 @@ description: Discord sunucularınızda kullanabileceğiniz sesleri içeren bir w
 date: 2023-10-10
 image: /images/articles/yeni-websitem-discord-sfx.png
 ---
-
 # Discord SFX
 
 Discord SFX, Discord sunucularında kullanılmak üzere ses efektleri listeleme, oluşturma ve indirme imkanı sağlayan bir web sitesidir. Bu blog gönderisinde, Discord SFX'i inceleyeceğiz ve sitenin artılarını ve eksilerini tartışacağız.

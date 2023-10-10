@@ -37,7 +37,7 @@ const components = {
   ol: ({ node, ...props }) => <ol className='flex flex-col px-4 list-decimal list-outside gap-y-2' {...props} />,
   p: ({ node, ...props }) => <p className='items-center text-sm text-light-secondaryText dark:text-dark-secondaryText' {...props} />,
   strong: ({ node, ...props }) => <strong className='font-semibold' {...props} />,
-  a: ({ node, ...props }) => <InlineLink {...props} />,
+  a: ({ node, ...props }) => <InlineLink {...props} to={props.href} />,
   pre: ({ node, ...props }) => {
     const [copied, setCopied] = useState(false);
     let language = props.children[0].props.className.split('-')[1];
