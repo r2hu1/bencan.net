@@ -17,8 +17,9 @@ export default function Footer() {
           {social.map((item, index) => (
             <Link className={twMerge(
               'w-full py-2 text-center hover:opacity-80 cursor-pointer font-semibold social-button',
-              index === 0 ? 'rounded-xl sm:rounded-r-none' : '',
-              index === social.length - 1 ? 'rounded-xl sm:rounded-l-none' : '',
+              index === 0 && 'rounded-xl sm:rounded-r-none',
+              index === social.length - 1 && 'rounded-xl sm:rounded-l-none',
+              index !== 0 && index !== social.length - 1 && 'rounded-xl sm:rounded-none',
             )} style={{ backgroundColor: item.color + '20', color: item.color, '--color': item.color + '50' }} key={index} href={item.url} target='_blank'>
               {item.name}
               <LuArrowUpRight className='inline-block ml-1' />
