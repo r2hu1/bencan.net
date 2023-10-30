@@ -5,13 +5,12 @@ import Articles from '@/pages/components/Articles';
 import Footer from '@/pages/components/Footer';
 import TechStack from '@/pages/components/TechStack';
 import axios from 'axios';
-import { LuGithub } from 'react-icons/lu';
-import Link from 'next/link';
 import fs from 'fs';
 import OpacityMotion from '@/pages/components/OpacityMotion';
 import Head from 'next/head';
+import Repos from './components/Repos';
 
-export default function Home({ discord_data, articles }) {
+export default function Home({ discord_data, articles, repositories }) {
   return (
     <>
       <Head>
@@ -36,7 +35,7 @@ export default function Home({ discord_data, articles }) {
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="canonical" href="https://bencan.net" />
       </Head>
-      <div className="w-full h-full flex justify-center">
+      <div className="flex justify-center w-full h-full">
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
           <OpacityMotion>
@@ -44,6 +43,7 @@ export default function Home({ discord_data, articles }) {
             <CreatedWebsites />
             <Articles articles={articles} />
             <TechStack />
+            <Repos repositories={repositories} />
             <Footer />
           </OpacityMotion>
         </div>
@@ -54,6 +54,7 @@ export default function Home({ discord_data, articles }) {
 
 export async function getServerSideProps() {
   try {
+    const repositories = await axios.get('https://api.github.com/users/chimpdev/repos').then(res => res.data).catch(() => null);
     const response = await axios.get('https://api.lanyard.rest/v1/users/957840712404193290').then(res => res.data).catch(() => null);
 
     const files = fs.readdirSync(`${process.cwd()}/public/articles`);
@@ -80,7 +81,8 @@ export async function getServerSideProps() {
     return {
       props: {
         discord_data: response?.data || 'offline',
-        articles: articlesSortedByDate || []
+        articles: articlesSortedByDate || [],
+        repositories: repositories || []
       }
     };
   } catch (error) {
