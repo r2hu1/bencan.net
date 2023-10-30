@@ -9,6 +9,16 @@ import { forwardRef } from "react";
 
 export default function Repos({ repositories }) {
 
+  if (!repositories) repositories = [
+    {
+      owner: {
+        login: 'chimpdev',
+        avatar_url: 'https://avatars.githubusercontent.com/u/55600314?v=4',
+        html_url: 'https://github.com/chimpdev'
+      },
+    }
+  ];
+
   const languageIcons = {
     'JavaScript': <SiJavascript className="text-yellow-300 rounded-sm" />,
     'CSS': <><SiCss3 className="text-blue-500 rounded-sm" /> CSS</>,

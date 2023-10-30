@@ -82,15 +82,7 @@ export async function getServerSideProps() {
       props: {
         discord_data: response?.data || 'offline',
         articles: articlesSortedByDate || [],
-        repositories: repositories || [
-          {
-            owner: {
-              login: 'chimpdev',
-              avatar_url: 'https://avatars.githubusercontent.com/u/55600314?v=4',
-              html_url: 'https://github.com/chimpdev'
-            },
-          }
-        ]
+        repositories: repositories || []
       }
     };
   } catch (error) {
