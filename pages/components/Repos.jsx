@@ -57,7 +57,7 @@ export default function Repos({ repositories }) {
             {repositories[0].owner.login}
           </Link>
 
-          <span className='flex items-center ml-2 text-sm gap-x-1 text-dark-tertiaryText dark:text-dark-tertiaryText'>
+          <span className='flex items-center ml-2 text-sm gap-x-1 text-light-tertiaryText dark:text-dark-tertiaryText'>
             <LuGithub /> {repositories.filter(({ fork, name }) => !fork && allowedRepos.includes(name)).length}
           </span>
         </h1>
