@@ -7,20 +7,20 @@ export default function Page404() {
   return (
     <>
       <Head>
-        <title>{`bencan.net: Sayfa Bulunamadı`}</title>
-        <meta name="description" content="Sayfa bulunamadı." />
+        <title>{`bencan.net: Page Not Found`}</title>
+        <meta name="description" content="Page not found." />
         <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
         <meta name="author" content="Discord @ben.can" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={`bencan.net: Sayfa Bulunamadı`} />
-        <meta property="og:description" content="Sayfa bulunamadı." />
+        <meta property="og:title" content={`bencan.net: Page not found.`} />
+        <meta property="og:description" content="Page not found." />
         <meta property="og:image" content="https://bencan.net/images/og-image.png" />
         <meta property="og:url" content={`https://bencan.net`} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="tr_TR" />
 
         <meta name="twitter:title" content="bencan.net" />
-        <meta name="twitter:description" content="Sayfa bulunamadı." />
+        <meta name="twitter:description" content="Page not found." />
         <meta name="twitter:image" content="https://bencan.net/images/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -28,17 +28,17 @@ export default function Page404() {
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="canonical" href="https://bencan.net" />
       </Head>
-      <div className="w-full h-full flex justify-center">
+      <div className="flex justify-center w-full h-full">
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
           <OpacityMotion>
-            <div className="mx-6 mt-28 flex flex-col">
-              <h1 className='text-lg flex items-center gap-x-1'>
-                <LuFrown /> Sayfa Bulunamadı
+            <div className="flex flex-col mx-6 mt-28">
+              <h1 className='flex items-center text-lg gap-x-1'>
+                <LuFrown /> 404
               </h1>
 
-              <p className='text-light-secondaryText dark:text-dark-secondaryText text-sm mt-4'>
-                Aradığınız sayfa bulunamadı.
+              <p className='mt-4 text-sm text-light-secondaryText dark:text-dark-secondaryText'>
+                The page you are looking for was not found.
               </p>
             </div>
           </OpacityMotion>

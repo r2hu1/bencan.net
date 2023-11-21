@@ -1,40 +1,40 @@
 [
   {
     "name": "Discord SFX",
-    "description": "Discord SFX, Discord sunucunuzun ses panosu için ses efektleri indirebileceğiniz ve paylaşabileceğiniz bir web sitesidir.",
+    "description": "Discord SFX is a website where you can download and share sound effects for your Discord server's soundboard.",
     "year": "2023",
     "link": "https://discordsfx.com",
     "image": "/images/websites/discordsfx-com.png"
   },
   {
     "name": "psimed.com.tr",
-    "description": "Psikoloji, Psikiyatri ve Psikoterapi Merkezi olan Psimed'in React.js ile geliştirilen web sitesidir.",
+    "description": "Psimed is a Psychology, Psychiatry and Psychotherapy Center. This website is developed with React.js.",
     "year": "2023",
     "link": "https://psimed.com.tr",
     "image": "/images/websites/psimed-com-tr.png"
   },
   {
     "name": "kisilerarasiiliskilerterapisi.com",
-    "description": "Kişilerarası İlişkiler Psikoterapisi Derneği için React.js ile geliştirilen web sitesidir.",
+    "description": "Interpersonal Relations Psychotherapy Association's website developed with React.js.",
     "year": "2023",
     "link": "https://kisilerarasiiliskilerterapisi.com",
     "image": "/images/websites/kisilerarasiiliskilerterapisi-com.png"
   },
   {
     "name": "secim.barisyasaman.com",
-    "description": "๏ Türkiye Cumhuriyeti Roleplay Discord sunucusuna özel seçim sonuçlarının canlı açıklanabilmesi için geliştirilen bir web sitesidir.",
+    "description": "A website developed for the Republic of Turkey Roleplay Discord server to announce election results live.",
     "year": "2023",
     "link": "https://secim.barisyasaman.com",
     "image": "/images/websites/secim-barisyasaman-com.png"
   },
   {
     "name": "Codexa",
-    "description": "Ücretsiz kod paylaşım sitesi, Discord yardım kanallarıyla destek sağlayan bir platformdu.",
+    "description": "Codexa is a website where you can share your codes and get help from the community. (Closed)",
     "year": "2023"
   },
   {
     "name": "distop.gg",
-    "description": "Discord sunucularını seste bulunan üye/toplam üye/aktif üye gibi istatistiklerle sıralayan ve sunucu sahiplerine sunucularını tanıtmaları için bir platform sağlayan bir web sitesiydi.",
+    "description": "Distop was a website that ranked Discord servers with statistics such as members/total members/active members in voice and provided a platform for server owners to promote their servers.",
     "year": "2022",
     "link": "https://distop.gg",
     "image": "/images/websites/distop-gg.png"

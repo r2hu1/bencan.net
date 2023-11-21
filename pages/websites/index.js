@@ -35,26 +35,25 @@ export function WebsiteCard(props) {
 };
 
 export default function Websites({ createdWebsites }) {
-
   const [limit, setLimit] = useState(3);
 
   return (
     <>
       <Head>
-        <title>{`bencan.net: Yaptığım Websiteler`}</title>
-        <meta name="description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <title>{`bencan.net: Websites I Made`}</title>
+        <meta name="description" content="Websites I made using some technologies." />
         <meta name="keywords" content="bencan, bencan.net, bencan.net, bencan.net, bencan.net" />
         <meta name="author" content="Discord @ben.can" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={`bencan.net: Yaptığım Websiteler`} />
-        <meta property="og:description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <meta property="og:description" content="Websites I made using some technologies." />
         <meta property="og:image" content="https://bencan.net/images/og-image.png" />
         <meta property="og:url" content="https://bencan.net/websites" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="tr_TR" />
 
         <meta name="twitter:title" content="bencan.net" />
-        <meta name="twitter:description" content="Bazı teknolojileri kullanarak yaptığım websiteler." />
+        <meta name="twitter:description" content="Websites I made using some technologies." />
         <meta name="twitter:image" content="https://bencan.net/images/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
@@ -63,33 +62,33 @@ export default function Websites({ createdWebsites }) {
         <link rel="canonical" href="https://bencan.net/websites" />
       </Head>
 
-      <div className="w-full h-full flex justify-center">
+      <div className="flex justify-center w-full h-full">
         <div className="w-full min-h-[100dvh] max-w-[700px] px-6 mb-12">
           <Header />
           <OpacityMotion>
-            <div className="mx-6 mt-28 flex flex-col">
-              <h1 className='text-lg flex items-center gap-x-1'>
-                <LuPalmtree /> Yaptığım Websiteler
+            <div className="flex flex-col mx-6 mt-28">
+              <h1 className='flex items-center text-lg gap-x-1'>
+                <LuPalmtree /> Websites I Made
               </h1>
 
-              <p className='text-light-secondaryText dark:text-dark-secondaryText text-sm mt-4'>
-                Bazı teknolojileri kullanarak hem kendimi geliştirmek için hemde başkalarına yardımcı olmak için yaptığım websiteler.
+              <p className='mt-4 text-sm text-light-secondaryText dark:text-dark-secondaryText'>
+                Websites I made using some technologies to improve myself and help others.
               </p>
 
-              <div className='my-8 flex flex-col gap-y-8'>
+              <div className='flex flex-col my-8 gap-y-8'>
                 {createdWebsites.slice(0, limit).map((website, index) => (
                   <WebsiteCard className='flex justify-between' key={index} data={website} />
                 ))}
               </div>
 
               <button className={twMerge(
-                'bg-light-secondary dark:bg-dark-secondary hover:bg-light-tertiary hover:dark:bg-dark-tertiary duration-300 ease-in-out transition-all text-sm text-light-primaryText dark:text-dark-primaryText rounded w-full py-2 font-medium',
+                'text-sm flex items-center justify-center flex-1 w-full px-4 py-2 border-2 cursor-pointer gap-x-1 text-light-primaryText dark:text-dark-primaryText rounded-xl gap-y-2 bg-light-secondary dark:bg-dark-secondary border-light-tertiary dark:border-dark-tertiary hover:dark:bg-dark-tertiary hover:bg-light-tertiary',
                 limit >= createdWebsites.length ? 'opacity-0 translate-y-5 pointer-events-none' : 'translate-y-0 opacity-100 pointer-events-auto'
               )} onClick={() => {
                 if (limit >= createdWebsites.length) return;
                 setLimit(limit + 3);
               }}>
-                Daha fazla yükle ({limit}/{createdWebsites.length})
+                See More ({limit}/{createdWebsites.length})
               </button>
             </div>
           </OpacityMotion>

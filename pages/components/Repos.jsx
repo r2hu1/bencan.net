@@ -51,7 +51,7 @@ export default function Repos({ repositories }) {
       <Seperator />
       <div className="flex flex-col mx-6">
         <h1 className='flex flex-wrap items-center gap-2 text-lg'>
-          GitHub Projelerim
+          GitHub Repositories
           <Link className='flex items-center ml-0 text-sm transition-all duration-300 ease-in-out sm:ml-2 gap-x-1 text-light-tertiaryText dark:text-dark-tertiaryText hover:text-light-primaryText hover:dark:text-dark-primaryText' href={repositories[0].owner.html_url} target='_blank'>
             <img src={repositories[0].owner.avatar_url} className='w-5 h-5 rounded-full' />
             {repositories[0].owner.login}

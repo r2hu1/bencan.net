@@ -23,12 +23,12 @@ export default function CreatedWebsites() {
 
   return (
     <>
-      <div className="mx-6 mt-16 flex flex-col">
+      <div className="flex flex-col mx-6 mt-16">
         <h1 className='text-lg'>
-          Yaptığım Websiteler
+          Websites I Made
         </h1>
 
-        <motion.div className='my-8 flex flex-col gap-y-8' variants={container} initial='hidden' whileInView='show'>
+        <motion.div className='flex flex-col my-8 gap-y-8' variants={container} initial='hidden' whileInView='show'>
           {createdWebsites.slice(0, 3).map((website, index) => (
             <WebsiteCard className='flex justify-between' key={index} variants={item} data={website} />
           ))}
@@ -36,7 +36,7 @@ export default function CreatedWebsites() {
 
         <h3>
           <InlineLink to='/websites' underlineDisabled={true} arrowRotate={false}>
-            Daha fazla görüntüle
+            See more
           </InlineLink>
         </h3>
       </div>
