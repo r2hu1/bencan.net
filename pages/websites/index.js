@@ -19,7 +19,7 @@ export function WebsiteCard(props) {
         </p>
         {props.data.link && (
           <InlineLink to={props.data.link} className='text-lg text-light-primaryText dark:text-dark-primaryText'>
-            Git
+            Visit
           </InlineLink>
         )}
       </div>
