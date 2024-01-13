@@ -15,7 +15,7 @@ export default function WorkCard(data) {
           <p className="text-xs text-white text-opacity-80 text-pretty">{data.description}</p>
           <div className="flex flex-wrap gap-2 mt-2">
             {data.tech.map(tech => (
-              <span key={tech} className="text-xs font-semibold text-opacity-80 bg-neutral-300 px-2 py-0.5 rounded-sm">{tech}</span>
+              <span key={tech} className="text-xs font-semibold text-opacity-80 bg-secondary px-2 py-0.5 rounded-sm">{tech}</span>
             ))}
           </div>
           {data.link && (

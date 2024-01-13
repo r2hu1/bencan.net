@@ -35,12 +35,12 @@ const config = {
       tech: ['React'],
       link: 'https://secim.barisyasaman.com'
     },
-    {
+    /*{
       image: 'https://i.imgur.com/7RpSTfk.png',
       title: 'Evil Magic',
       description: 'A website for Evil Magic NFT project.',
       tech: ['Next.js']
-    },
+    },*/
     {
       image: 'https://i.imgur.com/XXrkGOK.png',
       title: 'bencan.net',

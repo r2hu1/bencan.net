@@ -17,7 +17,7 @@ export default function Header() {
       </Link>
 
       <div className='flex text-sm gap-x-12'>
-        <Link href='https://github.com/chimpdev/bencan.net' className='relative flex justify-center px-2 py-2 font-medium transition-all rounded hover:bg-neutral-200/50'>
+        <Link href='https://github.com/chimpdev/bencan.net' className='relative flex justify-center px-3 py-2 font-semibold rounded hover:bg-black hover:text-white'>
           Source Code
         </Link>
       </div>

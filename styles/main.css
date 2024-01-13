@@ -1,18 +1,11 @@
-:root {
-  --primary: 0, 0%, 97.18%;
-  --secondary: 0, 0%, 94%;
-  --border: 0, 0%, 87.88%;
-  --text: 0, 0%, 7%;
-}
-
 html, body {
   height: 100dvh;
   width: 100vw;
   margin: 0;
   padding: 0;
   font-size: 16px;
-  background-color: hsl(var(--primary));
-  color: hsl(var(--text));
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
   overflow-x: hidden;
 }
 
