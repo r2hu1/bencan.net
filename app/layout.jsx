@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import { Toaster } from '@/components/ui/sonner';
 import '@/styles/tailwind.css';
 import '@/styles/main.css';
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           <main className='max-w-[1200px] w-full h-[100dvh] px-16 sm:px-20 xl:px-0'>
             {children}
           </main>
+          <Toaster />
         </div>
       </body>
     </html>
