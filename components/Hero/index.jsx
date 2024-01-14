@@ -25,7 +25,7 @@ export default function Hero() {
 
         const invite = await createFriendInvite();
         if (!invite.success) {
-          toast.error(invite.message);
+          toast.error(invite.error);
           return setLoading(false);
         } else {
           toast.success(`Invite ${invite.data} created! In 3 seconds, you will be redirected to Discord.`);
