@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import favicon from '@/app/favicon.ico';
 import Link from 'next/link';
+import { Button } from '../ui/button';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Header() {  
   return (
@@ -17,8 +19,11 @@ export default function Header() {
       </Link>
 
       <div className='flex text-sm gap-x-12'>
-        <Link href='https://github.com/chimpdev/bencan.net' className='relative flex justify-center px-3 py-2 font-semibold rounded hover:bg-black hover:text-white'>
-          Source Code
+        <Link href='https://github.com/chimpdev/bencan.net'>
+          <Button variant='ghost' className='w-max'>
+            <FaGithub className='inline-block mr-2' size={20} />
+            Source Code
+          </Button>
         </Link>
       </div>
     </nav>
