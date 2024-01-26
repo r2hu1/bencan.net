@@ -1,3 +1,5 @@
+'use client';
+
 import { GrTechnology } from 'react-icons/gr';
 import Card from '@/components/TechStack/Card';
 import config from '@/config';
@@ -15,9 +17,10 @@ export default function TechStack() {
       </p>
 
       <div className="flex flex-wrap gap-4 my-4">
-        {config.techStack.map((icon, index) => (
+        {Object.entries(config.techStack).map(([name, icon], index) => (
           <Card
             icon={icon}
+            name={name}
             key={index}
           />
         ))}

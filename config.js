@@ -61,19 +61,19 @@ const config = {
     { icon: FaInstagram, to: 'https://instagram.com/gokhanknows' },
     { icon: BiLogoGmail, to: 'mailto:skyhancloud@gmail.com' }
   ],
-  techStack: [
-    RiReactjsLine,
-    TbBrandNextjs,
-    SiExpress,
-    SiMongodb,
-    FaNodeJs,
-    IoLogoJavascript,
-    IoLogoCss3,
-    IoLogoHtml5,
-    SiTailwindcss,
-    SiVercel,
-    SiVisualstudiocode
-  ]
+  techStack: {
+    'Next.js': TbBrandNextjs,
+    'React': RiReactjsLine,
+    'Express': SiExpress,
+    'MongoDB': SiMongodb,
+    'Node.js': FaNodeJs,
+    'TailwindCSS': SiTailwindcss,
+    'Vercel': SiVercel,
+    'VSCode': SiVisualstudiocode,
+    'CSS': IoLogoCss3,
+    'HTML': IoLogoHtml5,
+    'JavaScript': IoLogoJavascript
+  }
 };
 
 export default config;
