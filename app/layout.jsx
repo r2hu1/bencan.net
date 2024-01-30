@@ -7,22 +7,6 @@ import '@/styles/tailwind.css';
 import '@/styles/main.css';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'bencan.net',
-  description: 'My personal website.',
-  keywords: [
-    'bencan',
-    'bencan.net'
-  ],
-  authors: [
-    { name: 'Discord @ben.can' }
-  ],
-  creator: 'Discord @ben.can',
-  icons: {
-    icon: '/favicon.ico'
-  }
-};
   
 export default function RootLayout({ children }) {
   return (

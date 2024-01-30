@@ -4,6 +4,22 @@ import SelectedWorks from '@/components/SelectedWorks';
 import Contact from '@/components/Contact';
 import TechStack from '@/components/TechStack';
 
+export const metadata = {
+  title: 'bencan.net',
+  description: 'My personal website.',
+  keywords: [
+    'bencan',
+    'bencan.net'
+  ],
+  authors: [
+    { name: 'Discord @ben.can' }
+  ],
+  creator: 'Discord @ben.can',
+  icons: {
+    icon: '/favicon.ico'
+  }
+};
+
 export default function Page() {
   return (
     <>
