@@ -8,6 +8,13 @@ import { TbBrandNextjs } from 'react-icons/tb';
 const config = {
   selectedWorks: [
     {
+      image: 'https://raw.githubusercontent.com/chimpdev/steam-auto-try-converter/main/images/logo.png',
+      title: 'Steam Auto Try Converter',
+      description: 'A Google Chrome extension that automatically converts prices to TRY from USD with the current exchange rate on Steam web pages.',
+      tech: ['JavaScript'],
+      link: 'https://github.com/chimpdev/steam-auto-try-converter'
+    },
+    {
       image: 'https://i.imgur.com/4eFt9Oz.png',
       title: 'Discord SFX',
       description: 'A website that allows you download mp3 files for your Discord Soundboard.',
