@@ -8,6 +8,13 @@ import { TbBrandNextjs } from 'react-icons/tb';
 const config = {
   selectedWorks: [
     {
+      image: 'https://i.imgur.com/k73UnJZ.png',
+      title: 'Discord Place',
+      description: 'All things related to Discord in one place. Find the best bots, servers, and communities.',
+      tech: ['Next.js', 'Express', 'MongoDB'],
+      link: 'https://discord.place'
+    },
+    {
       image: 'https://i.imgur.com/XXrkGOK.png',
       title: 'Steam Auto Try Converter',
       description: 'A Google Chrome extension that automatically converts prices to TRY from USD with the current exchange rate on Steam web pages.',
