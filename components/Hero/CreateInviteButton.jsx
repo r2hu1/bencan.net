@@ -48,9 +48,9 @@ export default function CreateInviteButton() {
           toast.error(err);
         }
       });
-    }} disabled={loading}>
+    }} disabled={true}>
       {loading ? <CgSpinner className='inline-block mr-2 animate-spin' size={20} /> : <FaDiscord className='inline-block mr-2' size={20} />}
-        Add me on Discord
+        Add me on Discord (disabled for now)
     </Button>
   );
 }
