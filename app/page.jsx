@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import SelectedWorks from '@/components/SelectedWorks';
 import Contact from '@/components/Contact';
 import TechStack from '@/components/TechStack';
+import RecentMediumPublications from '@/components/RecentMediumPublications';
 
 export const metadata = {
   title: 'bencan.net',
@@ -27,6 +28,7 @@ export default function Page() {
       <Hero />
       <SelectedWorks />
       <TechStack />
+      <RecentMediumPublications />
       <Contact />
     </>
   );
