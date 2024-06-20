@@ -8,6 +8,13 @@ import { TbBrandNextjs } from 'react-icons/tb';
 const config = {
   selectedWorks: [
     {
+      image: 'https://i.imgur.com/aXVsY1q.png',
+      title: 'Lantern',
+      description: 'Lantern broadcasts your Discord status to an API and WebSocket, allowing you to display your presence on your website or other services.',
+      tech: ['Express', 'MongoDB'],
+      link: 'https://github.com/discordplace/lantern'
+    },
+    {
       image: 'https://i.imgur.com/k73UnJZ.png',
       title: 'Discord Place',
       description: 'All things related to Discord in one place. Find the best bots, servers, and communities.',
