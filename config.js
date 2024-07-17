@@ -8,6 +8,13 @@ import { TbBrandNextjs } from 'react-icons/tb';
 const config = {
   selectedWorks: [
     {
+      image: 'https://i.imgur.com/hqBoGAs.png',
+      title: 'Distalk',
+      description: 'A Discord bot that allows you to chat anonymously with other users without having worry about your identity. No data collected.',
+      tech: ['Node.js', 'MongoDB'],
+      link: 'https://discord.gg/hnNDMTYxD2'
+    },
+    {
       image: 'https://i.imgur.com/aXVsY1q.png',
       title: 'Lantern',
       description: 'Lantern broadcasts your Discord status to an API and WebSocket, allowing you to display your presence on your website or other services.',
