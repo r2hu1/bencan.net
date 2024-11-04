@@ -6,7 +6,7 @@ import TechStack from '@/components/TechStack';
 import RecentMediumPublications from '@/components/RecentMediumPublications';
 
 export const metadata = {
-  title: 'bencan.net',
+  title: 'rahul.eu.org',
   description: 'My personal website.',
   keywords: [
     'bencan',
